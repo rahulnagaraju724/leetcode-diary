@@ -1,0 +1,140 @@
+
+class Pair{
+    int first;
+    int second;
+    public Pair(int first,int second){
+        this.first=first;
+        this.second=second;
+    }
+}
+
+class Solution {
+    public int numIslands(char[][] grid) {
+        //200. Number of Islands
+        int counter = 0;
+        int[][] visitSet = new int[grid.length][grid[0].length];
+
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if (grid[i][j] == '1' && visitSet[i][j] == 0) {
+                    bfs(grid, visitSet, i, j);
+                    counter++;
+                }
+            }
+        }
+        return counter;
+    }
+
+    public void bfs(char[][] grid, int[][] visitSet, int i, int j) {
+        Queue<int[]> queue = new ArrayDeque<>();
+        int[] pair = {i, j};
+        queue.add(pair);
+        visitSet[i][j] = 1;
+
+        int n = grid.length;
+        int m = grid[0].length;
+
+        int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+
+        while (!queue.isEmpty()) {
+            int[] currentPair = queue.poll();
+            int row = currentPair[0];
+            int col = currentPair[1];
+
+            for (int[] direction : directions) {
+                int newRow = row + direction[0];
+                int newCol = col + direction[1];
+
+                if (newRow >= 0 && newRow < n && newCol >= 0 && newCol < m && grid[newRow][newCol] == '1' && visitSet[newRow][newCol] == 0) {
+                    queue.add(new int[]{newRow, newCol});
+                    visitSet[newRow][newCol] = 1;
+                }
+            }
+        }
+    }
+}
+
+// class Pair{
+//     int first;
+//     int second;
+//     public Pair(int first,int second){
+//         this.first=first;
+//         this.second=second;
+//     }
+// }
+
+// class Solution {
+//     public int numIslands(char[][] grid) {
+//         int counter=0;
+//         HashSet<Pair> visitSet=new HashSet<>();
+
+//         for(int i=0;i<grid.length;i++){
+//             for(int j=0;j<grid[i].length;j++){
+//                 Pair pairToCheck = new Pair(i, j);
+//                 if(grid[i][j]=='1' && !visitSet.contains(pairToCheck)){
+//                     bfs(grid,visitSet,i,j);
+//                     counter++;
+
+//                 }
+//             }
+//         }
+//         return counter;
+//     }
+
+//     public void bfs(char[][] grid, HashSet<Pair> visitSet,int i, int j){
+//         Queue<Pair> queue=new ArrayDeque<>();
+//         Pair pair=new Pair(i,j);
+//         queue.add(pair);
+//         visitSet.add(pair);
+        
+//         int n = grid.length;
+//         int m = grid[0].length;
+
+//         int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+
+//         while(!queue.isEmpty()){
+//             Pair currentPair=queue.poll();
+//             for(int[] direction: directions){
+//                 int row=currentPair.first+direction[0];
+//                 int col=currentPair.second+direction[1];
+//                 Pair pairToCheck=new Pair(row,col);
+//                 if(row >=0 && col>=0 && row<n && col<m && grid[row][col]=='1' && !visitSet.contains(pairToCheck)){
+//                     queue.add(pairToCheck);
+//                     visitSet.add(pairToCheck);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+// class Solution {
+//     public int numIslands(char[][] grid) {
+//         //200. Number of Islands
+
+//         int counter=0;
+//         for(int i=0;i<grid.length;i++){
+//             for(int j=0;j<grid[i].length;j++){
+//                 if(grid[i][j]=='1'){
+//                     char a,b,c,d;
+//                     //a right->i,j+1
+//                     //b bottom->i+1,j
+//                     //c left->i,j-1
+//                     //d up->i-1,j
+//                     //System.out.println(i+"  "+j);
+//                     a= (j+1>=grid[i].length)? '0':grid[i][j+1];
+//                     b=(i+1>=grid.length)? '0':grid[i+1][j];
+//                     c=(j-1<0)?'0':grid[i][j-1];
+//                     d=(i-1<0)?'0':grid[i-1][j];
+//                     System.out.println(i+" "+j+" "+a+" "+b+" "+c+" "+d);
+//                     if(a=='0' && b=='0' && c=='0' && d=='0'){
+//                         counter++;
+
+//                     }
+
+//                 }
+//             }
+//         }
+//         return counter;
+//     }
+// }

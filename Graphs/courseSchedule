@@ -1,0 +1,71 @@
+class Solution {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+
+        // This is static array
+        // HashMap<Integer, int[]> coursesMap=new HashMap<>();
+
+        // for(int i=0;i<numCourses;i++){
+        //     coursesMap.put(i,new int[]{});
+        // }
+
+        // for(int i=0;i<prerequisites.length;i++){
+           
+        //    int[] currentArray = coursesMap.get(prerequisites[i][0]); // Retrieve the array
+        //    int[] newArray = Arrays.copyOf(currentArray, currentArray.length + 1); // Create a new array with extra space
+        //    newArray[newArray.length - 1] = prerequisites[i][1]; // Add the new value to the end of the array
+
+        //    coursesMap.put(prerequisites[i][0], newArray);
+        // }
+
+        // 207. Course Schedule
+        Map<Integer, List<Integer>> coursesMap = new HashMap<>();
+
+        for (int i = 0; i < numCourses; i++) {
+            coursesMap.put(i, new ArrayList<>());
+        }
+
+        for (int i = 0; i < prerequisites.length; i++) {
+            int course = prerequisites[i][0];
+            int prerequisite = prerequisites[i][1];
+
+            List<Integer> currentList = coursesMap.get(course);
+            currentList.add(prerequisite);
+        }
+        //coursesMap.forEach((key, value) -> System.out.println(key + " " + value));
+
+        HashSet<Integer> visitSet=new HashSet<>();
+
+        for(int i=0;i<numCourses;i++){
+           
+            if(! dfs(i,coursesMap,visitSet)){
+                return false;
+            }
+            //return dfs(i,coursesMap,visitSet); idk y this is right
+        }
+
+        return true;
+    }
+
+    public boolean dfs(int course, Map<Integer, List<Integer>>  coursesMap,  HashSet<Integer> visitSet ){
+        if(visitSet.contains(course)){
+            return false;
+        }
+        visitSet.add(course);
+        List<Integer> preReqs=coursesMap.get(course);
+        if(preReqs!=null){
+            //visitSet.add(course);
+            for(Integer preReq:preReqs){
+                if(! dfs(preReq,coursesMap,visitSet)){
+                    return false;
+                }
+
+            }
+        } else{
+            return true;
+        }
+                visitSet.remove(course);
+                coursesMap.put(course,new ArrayList<>());
+                return true;
+    //return true;
+    }
+}

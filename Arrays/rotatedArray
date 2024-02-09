@@ -1,0 +1,41 @@
+class Solution {
+    public void rotate(int[] nums, int k) {
+        //189. Rotate Array
+        reverse(nums,0,nums.length-1);
+        k=k%nums.length;
+        reverse(nums,0,k-1);
+        reverse(nums,k,nums.length-1);
+    }
+    public void reverse(int []nums,int left,int right){
+        while(left<=right){
+            int temp=nums[left];
+            nums[left]=nums[right];
+            nums[right]=temp;
+            left++;
+            right--;
+        }
+    }
+}
+
+// class Solution {
+//     public void rotate(int[] nums, int k) {
+//         //189. Rotate Array
+//         k=k%nums.length;
+//         k=nums.length-k;
+
+//         int i=0;
+//         int[] rotatedArray=new int[nums.length];
+
+//         while(k<nums.length){
+//             rotatedArray[i++]=nums[k++];
+//         }
+//         k=0;
+//         while(i<nums.length){
+//             rotatedArray[i++]=nums[k++];
+//         }
+//         System.out.println(Arrays.toString(rotatedArray));
+//         for(i=0;i<nums.length;i++){
+//             nums[i]=rotatedArray[i];
+//         }
+//     }
+// }
