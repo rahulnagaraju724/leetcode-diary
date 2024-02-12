@@ -43,3 +43,36 @@ class Solution {
         return root;
     }
 }
+
+class Solution {
+    public TreeNode deleteNode(TreeNode root, int key) {
+        //450. Delete Node in a BST
+        // This maintains the balance in the BST
+        if(root==null){
+            return root;
+        }
+        if(root.val==key){
+            if(root.right==null){// if right null or both null
+                return root.left;
+            }else if(root.left==null){
+                return root.right;
+            }else{ // if both not null
+                // Replace delete value with minimum value in right tree
+                TreeNode copyRoot=root;
+                root=root.right;
+                while(root.left!=null){ // find bottom left child of right
+                    root=root.left;
+                }
+
+                copyRoot.val=root.val;
+                copyRoot.right=deleteNode(copyRoot.right,copyRoot.val);
+                return copyRoot;
+            }
+
+        }
+
+        root.left=deleteNode(root.left,key);
+        root.right=deleteNode(root.right,key);
+        return root;
+    }
+}

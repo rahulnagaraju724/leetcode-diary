@@ -15,6 +15,7 @@
  */
 class Solution {
     public boolean isValidBST(TreeNode root) {
+        // Not a solution at all
         if(root==null){
             return true;
         }
@@ -91,3 +92,4 @@ public boolean isValidBST(TreeNode root) {
     }
     return true;
  }
+
