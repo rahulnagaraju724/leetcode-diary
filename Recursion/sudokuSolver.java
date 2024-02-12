@@ -4,7 +4,7 @@ class Solution {
     }
 
     public boolean solveSudoku(char[][] board,int row,int col){
-        //37. Sudoku Solver
+        //37. Sudoku Solver, just updating
         if(row>=9){
             return true;
         }
