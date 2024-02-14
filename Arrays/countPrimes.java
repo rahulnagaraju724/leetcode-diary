@@ -45,7 +45,7 @@ class Solution {
                 divisors.add(i);
                 count++;
             }
-            System.out.println(divisors);
+            //System.out.println(divisors);
         }
         return count;
     }
