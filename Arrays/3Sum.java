@@ -1,7 +1,7 @@
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         //15. 3Sum
-        Arrays.sort(nums);
+        Arrays.sort(nums);// But is sorting a good option?
 
         List<List<Integer>> result=new ArrayList<>();
 
@@ -9,7 +9,7 @@ class Solution {
 
         for(int i=0;i<nums.length;i++){ // Actually can do this i<nums.length-2 , but ok
 
-            if(i>0 && nums[i]==nums[i-1]){
+            if(i>0 && nums[i]==nums[i-1]){ // This is to avoid duplicates
                 continue;
             }
             

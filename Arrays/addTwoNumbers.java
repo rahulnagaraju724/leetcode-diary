@@ -11,7 +11,7 @@
 
 // class Solution {
 //     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-//         // 2. Add Two Numbers - Not a good solution
+//         //2. Add Two Numbers - Not a good solution
 //         int number1=getNumber(l1);
 //         int number2=getNumber(l2);
 //         //System.out.println(number1+" "+number2);

@@ -1,4 +1,4 @@
-// Wrong approach
+// Wrong approach, as highest value can be past and lowest can be future
 class Solution {
     public int maxProfit(int[] prices) {
         //121. Best Time to Buy and Sell Stock
@@ -43,7 +43,7 @@ class Solution {
     }
 }
 
-// OPmizsed apporach
+// OPtimised approach
 
 
 

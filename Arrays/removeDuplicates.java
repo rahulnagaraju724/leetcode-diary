@@ -14,7 +14,7 @@ class Solution {
 // // Bad Solution
 // class Solution {
 //     public int removeDuplicates(int[] nums) {
-//         // 26. Remove Duplicates from Sorted Array
+//         //26. Remove Duplicates from Sorted Array
 //         if(nums.length==0){
 //             return 0;
 //         }
