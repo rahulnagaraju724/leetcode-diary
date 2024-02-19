@@ -15,8 +15,8 @@
  */
 class Solution {
     public TreeNode deleteNode(TreeNode root, int key) {
-        // 450. Delete Node in a BST
-        // But this approach does not maintain balance in the BST
+        //450. Delete Node in a BST
+        //But this approach does not maintain balance in the BST
         if(root==null){
             return root;
         }
@@ -47,7 +47,7 @@ class Solution {
 class Solution {
     public TreeNode deleteNode(TreeNode root, int key) {
         //450. Delete Node in a BST
-        // This maintains the balance in the BST
+        //This maintains the balance in the BST
         if(root==null){
             return root;
         }

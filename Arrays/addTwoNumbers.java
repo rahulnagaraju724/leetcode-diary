@@ -9,40 +9,40 @@
  * }
  */
 
-// class Solution {
-//     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-//         //2. Add Two Numbers - Not a good solution
-//         int number1=getNumber(l1);
-//         int number2=getNumber(l2);
-//         //System.out.println(number1+" "+number2);
-//         int finalNumber=number1+number2;
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        //2. Add Two Numbers - Not a good solution
+        int number1=getNumber(l1);
+        int number2=getNumber(l2);
+        //System.out.println(number1+" "+number2);
+        int finalNumber=number1+number2;
 
-//         //LinkedList<ListNode> resultList=new LinkedList<>();
-//         ListNode dummyNode=new ListNode(0);
-//         ListNode resultList=dummyNode;
-//         if(finalNumber==0){
-//             return resultList;
-//         }
-//         while(finalNumber>0){
-//             int temp=finalNumber%10;
-//             finalNumber/=10;
+        //LinkedList<ListNode> resultList=new LinkedList<>();
+        ListNode dummyNode=new ListNode(0);
+        ListNode resultList=dummyNode;
+        if(finalNumber==0){
+            return resultList;
+        }
+        while(finalNumber>0){
+            int temp=finalNumber%10;
+            finalNumber/=10;
 
-//             // ListNode tempNode=new ListNode(temp);
-//             // if(resultList.head==null){
-//             //     resultList.head=tempNode;
-//             // }
-//             // else{
-//             //     ListNode last=resultList.head;
-//             //     while(last.next!=null){
-//             //         last=last.next;
-//             //     }
-//             //     last.next=tempNode;
-//             // }
+            // ListNode tempNode=new ListNode(temp);
+            // if(resultList.head==null){
+            //     resultList.head=tempNode;
+            // }
+            // else{
+            //     ListNode last=resultList.head;
+            //     while(last.next!=null){
+            //         last=last.next;
+            //     }
+            //     last.next=tempNode;
+            // }
 
-//             ListNode newNode=new ListNode(temp);
-//             resultList.next=newNode;
-//             resultList=resultList.next;
-//         }
+            ListNode newNode=new ListNode(temp);
+            resultList.next=newNode;
+            resultList=resultList.next;
+        }
 
 
 //         return dummyNode.next;

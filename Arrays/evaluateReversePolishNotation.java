@@ -3,7 +3,7 @@ class Solution {
         //150. Evaluate Reverse Polish Notation
         Stack<Integer> stack=new Stack<>();
         for(int i=0;i<tokens.length;i++){
-            //try{
+            //try{ //try cath increases the runtime
             if(!(tokens[i].equals("+") || tokens[i].equals("-") || tokens[i].equals("/") || tokens[i].equals("*") )){
                 int num=Integer.parseInt(tokens[i]);
                 stack.push(num);
