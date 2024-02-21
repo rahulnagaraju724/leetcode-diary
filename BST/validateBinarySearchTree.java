@@ -38,7 +38,7 @@ class Solution {
     }
 }
 
-// Right approach
+// Right approach, but int- few test cases fail
 class Solution {
     public boolean isValidBST(TreeNode root) {
         // if((root.left==null && root.right==null) || root==null){//This is when given values are same as max and min, but it doesn't work
@@ -56,6 +56,7 @@ class Solution {
         return isValidBST(root.left,minimumRange,root.val) && isValidBST(root.right,root.val,maximumRange);
     }
 }
+
 // Long so that it checks right
 class Solution {
     public boolean isValidBST(TreeNode root) {

@@ -56,7 +56,7 @@ class Solution {
                 return root.left;
             }else if(root.left==null){
                 return root.right;
-            }else{ // if both not null
+            }else{ // if both not null LOGIC CHANGE ONLY HERE FRM ABOVE QSTN
                 // Replace delete value with minimum value in right tree
                 TreeNode copyRoot=root;
                 root=root.right;
