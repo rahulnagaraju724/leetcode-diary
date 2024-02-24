@@ -86,3 +86,59 @@ class Solution {
        
     }
 }
+
+// Best approach
+class Solution {
+    public boolean findTarget(TreeNode root, int k) {
+        return run(root, root, k);
+    }
+    // Think, like this method
+    public boolean run(TreeNode root, TreeNode currentNode, int k) {
+        if (currentNode == null) return false;
+        if (find(root, k-currentNode.val, currentNode)) return true;
+        
+        return run(root, currentNode.left, k) || run(root, currentNode.right, k);
+    }
+
+    public boolean find(TreeNode root, int val, TreeNode current) {
+        if (root == null) return false;
+        if (val > root.val) return find(root.right, val, current);
+        else if (val < root.val) return find( root.left, val, current);
+        else if (val == root.val) return root != current;
+        
+        return false;
+    }
+}
+
+
+// Another method
+class Solution {
+    
+    public boolean findTarget(TreeNode root, int k) {
+        Queue<TreeNode> q=new LinkedList<>();
+        q.add(root);
+        ArrayList<Integer> list=new ArrayList<>();
+        while(!q.isEmpty()){
+            int n=q.size();
+            for(int i=0;i<n;i++){
+                TreeNode temp=q.poll();
+                list.add(temp.val);
+                if(temp.left!=null){
+                    q.add(temp.left);
+                }
+                if(temp.right!=null){
+                    q.add(temp.right);
+                }
+            }
+        }
+        
+        System.out.println(list);
+        for(int i=0;i<list.size();i++){
+            if(list.contains(k-list.get(i)) && (2*list.get(i)!=k)){
+                return true;
+            }
+        }
+        return false;
+        
+    }
+	}
