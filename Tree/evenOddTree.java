@@ -126,6 +126,7 @@ class Solution {
     }
 }
 
+// Best solution
 class Solution {
     public boolean isEvenOddTree(TreeNode root) {
       var queue = new ArrayDeque<TreeNode>();
