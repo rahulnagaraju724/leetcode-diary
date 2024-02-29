@@ -115,14 +115,14 @@ public class Solution {
             // adj.add(b,a);
         }
 
-        // System.out.println("Printing adj");
-        // for (ArrayList<Integer> innerList : adj) {
+        // System.out.println("Printing before adj");
+        // for (List<Integer> innerList : adj) {
         //     for (Integer element : innerList) {
-        //         System.out.print(element + " ");
+        //         System.out.print(element + ", ");
         //     }
         //     System.out.println(); // Print a new line after printing each inner ArrayList
         // }
-        //  System.out.println("After print adj");
+        // System.out.println("Printing after adj");
 
         ArrayList<Integer> dfsTraversal=new ArrayList<>();
         boolean[] visited=new boolean[v];
