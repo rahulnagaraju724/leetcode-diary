@@ -1,3 +1,4 @@
+// s.char is not possible. string is immutable
 class Solution {
     public String maximumOddBinaryNumber(String s) {
         //2864. Maximum Odd Binary Number
