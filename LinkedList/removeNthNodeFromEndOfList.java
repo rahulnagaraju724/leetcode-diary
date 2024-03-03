@@ -9,7 +9,7 @@
  * }
  */
 class Solution {
-    public ListNode removeNthFromEnd(ListNode head, int n) {\
+    public ListNode removeNthFromEnd(ListNode head, int n) {
         //19. Remove Nth Node From End of List
         ListNode fast=head;
         int i=0;
@@ -18,7 +18,7 @@ class Solution {
             i++;
         }
 
-        if(fast.next==null && i!=n){ //i!=n V.V.V. IMP, means remove first node bcz fast hasnot travelled n times
+        if(fast.next==null && i!=n){ //i!=n V.V.V. IMP, means remove first node bcz fast has not travelled n times
             ListNode newHead=head.next;
             head.next=null;
             return newHead;
