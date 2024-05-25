@@ -41,3 +41,7 @@ In an interview, whenever you're given a question where the input array is sorte
 * Two (or three) pointers
 * A sliding window
 * Traversing from the right
+
+
+https://github.com/xizhengszhang/Leetcode_company_frequency
+
