@@ -46,6 +46,10 @@ class Solution {
     }
 }
 
+//n=3, remove 8, I have to stop at 7, so at last node, 
+//a link must be pointing to before node 8, means here at node 7
+//1 2 3 4 5 6 7  8 9  10
+
 
 
 class Solution {
