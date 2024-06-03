@@ -61,3 +61,39 @@ class Solution {
         return best;
     }
 }
+
+
+class Solution {
+    public int maxScore(int[] cardPoints, int k) {
+        int n=cardPoints.length;
+        int left=0;
+        int right=0;
+        // int minimumSum=Integer.MAX_VALUE;
+        int totalSum=0;
+
+        while(right<n-k){
+           totalSum+=cardPoints[right];
+           right++;
+        }
+        int subArraySum=totalSum;
+        // minimumSum=Math.min(minimumSum,subArraySum);
+        int minimumSum=totalSum; // Not much of any help
+
+        // System.out.println(subArraySum);
+
+        while(right<n){
+            // System.out.println(left+","+right);
+            totalSum+=cardPoints[right];
+            subArraySum=subArraySum-cardPoints[left]+cardPoints[right];
+            minimumSum=Math.min(minimumSum,subArraySum);
+            // System.out.println(subArraySum+" and "+minimumSum);
+            left++;
+            right++;
+        }
+
+        // System.out.println(totalSum);
+
+        return totalSum-minimumSum;
+
+    }
+}
