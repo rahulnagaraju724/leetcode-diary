@@ -19,7 +19,7 @@ class Solution {
     }
 }
 
-// Not that great
+// My solution - Not that great
 class Solution {
     public int romanToInt(String s) {
         //13. Roman to Integer
