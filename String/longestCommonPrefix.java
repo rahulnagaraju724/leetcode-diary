@@ -1,48 +1,48 @@
-// class Solution {
-//     public String longestCommonPrefix(String[] strs) {
-//         //14. Longest Common Prefix
-//         String shortestString="";
-//         int min=Integer.MAX_VALUE;
-//         for(String str:strs){
-//             if(str.length()<min){
-//                 shortestString=str;
-//                 min=str.length();
-//             }
-//         }
-
-//         for(int i=0;i<min;i++){//flow takes f first
-//             for(String str: strs){//flowers takes f, next flow f, fliught f       
-//                 if((str.charAt(i)!=shortestString.charAt(i))){
-//                     return shortestString.substring(0,i);
-//                 }
-                
-//             }
-//         }
-//         //System.out.println(shortestString+min);
-//         return shortestString;
-//     }
-// }
-
-// class Solution {
-//     public String longestCommonPrefix(String[] v) {
-//         //14. Longest Common Prefix
-//         StringBuilder ans = new StringBuilder();
-//         Arrays.sort(v);
-//         String first = v[0];
-//         String last = v[v.length-1];
-//         for (int i=0; i<Math.min(first.length(), last.length()); i++) {
-//             if (first.charAt(i) != last.charAt(i)) {
-//                 return ans.toString();
-//             }
-//             ans.append(first.charAt(i));
-//         }
-//         return ans.toString();
-//     }
-// }
-
 class Solution {
     public String longestCommonPrefix(String[] strs) {
         //14. Longest Common Prefix
+        String shortestString="";
+        int min=Integer.MAX_VALUE;
+        for(String str:strs){
+            if(str.length()<min){
+                shortestString=str;
+                min=str.length();
+            }
+        }
+
+        for(int i=0;i<min;i++){//flow takes f first
+            for(String str: strs){//flowers takes f, next flow f, fliught f       
+                if((str.charAt(i)!=shortestString.charAt(i))){
+                    return shortestString.substring(0,i);
+                }
+                
+            }
+        }
+        //System.out.println(shortestString+min);
+        return shortestString;
+    }
+}
+
+// Liked it
+class Solution {
+    public String longestCommonPrefix(String[] v) {
+        //14. Longest Common Prefix
+        StringBuilder ans = new StringBuilder();
+        Arrays.sort(v);
+        String first = v[0];
+        String last = v[v.length-1];
+        for (int i=0; i<Math.min(first.length(), last.length()); i++) {
+            if (first.charAt(i) != last.charAt(i)) {
+                return ans.toString();
+            }
+            ans.append(first.charAt(i));
+        }
+        return ans.toString();
+    }
+}
+
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
         String prefix = strs[0];
         for(int index=1;index<strs.length;index++){
             while(strs[index].indexOf(prefix) != 0){

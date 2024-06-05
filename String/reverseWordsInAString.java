@@ -3,7 +3,7 @@ class Solution {
         //151.Reverse Words in a String
         int left=s.length()-1;
         int right=left+1;
-        if(right==0){
+        if(right==0){ // length==0
             return "";
         }
         StringBuilder str=new StringBuilder();
@@ -25,7 +25,7 @@ class Solution {
             str.append(s.substring(left+1,right));
         }
         
-        if(str.charAt(str.length()-1)==' '){
+        if(str.charAt(str.length()-1)==' '){ // remove extra space which is added in while loop
             str.setLength(Math.max(str.length() - 1, 0));
         }
 

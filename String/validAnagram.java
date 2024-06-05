@@ -6,7 +6,7 @@ class Solution {
         for(int i=0;i<s.length();i++){
             frequencyOfS[s.charAt(i)-97]++;
         }
-        for(int i=0;i<t.length();i++){
+        for(int i=0;i<t.length();i++){ //can do this in only one loop for s and t -> not needed
             frequencyOfT[t.charAt(i)-97]++;
         }
         for(int i=0;i<26;i++){
