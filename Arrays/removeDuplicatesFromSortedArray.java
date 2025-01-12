@@ -12,7 +12,20 @@ class Solution {
     }
 }
 
-// Bad Solution
+// My solution - more readable, but logic in aboe if loop is good
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int left=0;
+        for(int right=0; right<nums.length;right++){
+            if(nums[left]!=nums[right]){
+                nums[++left]=nums[right];
+            }
+        }
+        return left+1;
+    }
+}   
+
+// Bad Solution, may be mine
 class Solution {
     public int removeDuplicates(int[] nums) {
         //26. Remove Duplicates from Sorted Array
