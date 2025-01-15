@@ -1,4 +1,8 @@
-// Better Solution
+// Brute force - sort and then find, works only for non-duplicates 
+// Time complexity: O(n logn) and Space Complexity: O(1)
+
+// Better Solution -  2 pass
+// Time complexity: O(2n) and Space Complexity: O(1)
 import java.io.*;
 import java.util.Arrays;
 class Test
@@ -47,7 +51,8 @@ public static void main(String[] args)
 
 
 
-// Optimal Solution
+// Optimal Solution - 1 pass
+// Time complexity: O(n) and Space Complexity: O(1)
 import java.io.*;
 class Test
 {
