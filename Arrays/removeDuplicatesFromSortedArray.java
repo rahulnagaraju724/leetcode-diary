@@ -12,7 +12,11 @@ class Solution {
     }
 }
 
-// My solution - more readable, but logic in aboe if loop is good
+// Brute-force - Using Hashset and getting it back to arrays
+// Time complexity: O(n) and Space Complexity: O(n)
+
+// My solution - more readable, but logic in above if loop is good
+// Time complexity: O(n) and Space Complexity: O(1)
 class Solution {
     public int removeDuplicates(int[] nums) {
         int left=0;
