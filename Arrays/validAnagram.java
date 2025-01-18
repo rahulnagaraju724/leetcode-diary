@@ -1,3 +1,4 @@
+// Time complexity: O(2n+26) and Space Complexity: O(2*26)
 class Solution {
     public boolean isAnagram(String s, String t) {
         //242. Valid Anagram
@@ -18,6 +19,9 @@ class Solution {
     }
 }
 
+// Great solution
+// Time complexity: O(2n+26) and Space Complexity: O(26)
+// Is time O(n) or O(2n)
 class Solution {
 
     public boolean isAnagram(String s, String t) {
@@ -36,23 +40,8 @@ class Solution {
     }
 }
 
-
-
-import java.util.Arrays;
-
-class Solution {
-    public boolean isAnagram(String s, String t) {
-        char[] sChars = s.toCharArray();
-        char[] tChars = t.toCharArray();
-        
-        Arrays.sort(sChars);
-        Arrays.sort(tChars);
-        
-        return Arrays.equals(sChars, tChars);
-    }
-}
-
-
+// Similar as above but Map here
+// Time complexity: O(2n+n) and Space Complexity: O(n)
 class Solution {
     public boolean isAnagram(String s, String t) {
         Map<Character, Integer> count = new HashMap<>();
@@ -77,6 +66,25 @@ class Solution {
         return true;
     }
 }
+
+
+// Is sorting necessary
+// Time complexity: O(2* n logn + n) and Space Complexity: O(1)
+
+import java.util.Arrays;
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        char[] sChars = s.toCharArray();
+        char[] tChars = t.toCharArray();
+        
+        Arrays.sort(sChars);
+        Arrays.sort(tChars);
+        
+        return Arrays.equals(sChars, tChars);
+    }
+}
+
 
 class Solution {
     public boolean isAnagram(String s, String t) {
