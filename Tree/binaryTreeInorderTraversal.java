@@ -48,7 +48,7 @@ class Solution {
             inorder.add(root.val);
             root=root.right;
         }
-        return inorder;
+        return inorder; xaaq
     }
 
 }
