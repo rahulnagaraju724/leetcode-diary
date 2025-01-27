@@ -47,23 +47,8 @@ class Solution {
 }
 
 
-// Most optimal solution
+// Most optimal solution - My solution
 
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
         //102. Binary Tree Level Order Traversal
@@ -81,8 +66,7 @@ class Solution {
                     queue.offer(current.left);
                     queue.offer(current.right);
                     result.add(current.val);
-                }
-    
+                }   
             }
             if(!result.isEmpty()){ // Most important
                 results.add(result);
@@ -90,6 +74,5 @@ class Solution {
             
         }
         return results;
-    }
-    
-    }
+    }    
+}

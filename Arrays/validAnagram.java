@@ -19,7 +19,7 @@ class Solution {
     }
 }
 
-// Great solution
+// Great solution - Most optimal
 // Time complexity: O(2n+26) and Space Complexity: O(26)
 // Is time O(n) or O(2n)
 class Solution {
@@ -37,6 +37,22 @@ class Solution {
         for (int n : store) if (n != 0) return false;
 
         return true;
+    }
+}
+
+public class Solution {
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+
+        HashMap<Character, Integer> countS = new HashMap<>();
+        HashMap<Character, Integer> countT = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            countS.put(s.charAt(i), countS.getOrDefault(s.charAt(i), 0) + 1);
+            countT.put(t.charAt(i), countT.getOrDefault(t.charAt(i), 0) + 1);
+        }
+        return countS.equals(countT);
     }
 }
 

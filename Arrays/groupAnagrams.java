@@ -51,10 +51,13 @@ class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         //49. Group Anagrams
         HashMap<String, ArrayList<String>> map=new HashMap<>();
+
         for(String str: strs){
+
             char[] tempArray = str.toCharArray();
             Arrays.sort(tempArray);
             String tempStr=String.valueOf(tempArray);
+
             if(map.containsKey(tempStr)){
                 map.get(tempStr).add(str);
             }
@@ -94,7 +97,7 @@ class Solution {
             
             map.get(sortedWord).add(word);
         }
-        
+        // One line
         return new ArrayList<>(map.values());
     }
 }
