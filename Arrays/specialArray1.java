@@ -11,11 +11,11 @@ class Solution {
         return true;
     }
 }
-
+ 
 class Solution {
     public boolean isArraySpecial(int[] nums) {
         // 3151. Special Array I
-        int prev=nums[0]%2;
+        int prev=nums[0]%2; 
         for(int i=1;i<nums.length;i++){
             int curr=nums[i]%2;
             if((prev^curr)== 0){
