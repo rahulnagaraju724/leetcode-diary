@@ -32,6 +32,4 @@ class Solution {
         postorderTraversal(root.right,postorder);
         postorder.add(root.val);
     }
-
-    //Iterative
 }
