@@ -29,7 +29,9 @@ class Solution {
         preorderTraversal(root.left,preorder);
         preorderTraversal(root.right,preorder);
     }
+}
 
+class Solution{
     // Iterative - my method
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> preorder=new ArrayList<>();
@@ -45,7 +47,9 @@ class Solution {
         }
         return preorder;
     }
+}
 
+class Solution{
     // Iterative - conventional method
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> preorder=new ArrayList<>();
