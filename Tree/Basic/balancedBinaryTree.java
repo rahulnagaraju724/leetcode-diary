@@ -14,7 +14,9 @@
  * }
  */
 
-// But how can this work at each node or each level? Aren't we just checking root here? Which is wrong right?
+// But how can this work at each node or each level? Aren't we just checking root here? 
+// Which is wrong right?
+// No actually we are checking, but the thing is we are calculating height for every node
 class Solution {
     public boolean isBalanced(TreeNode root) {
         //110. Balanced Binary Tree
@@ -39,6 +41,7 @@ class Solution {
 
 // Solution starts here
 // One more method
+// This is great method here - credits to Saurabh
 class Result {
     private int height;
     private boolean isBalanced;
@@ -56,7 +59,7 @@ class Result {
         return isBalanced;
     }
 }
-
+// This is great method here - credits to Saurabh
 class Solution {
     public boolean isBalanced(TreeNode root) {
         if(root==null){
@@ -91,7 +94,9 @@ class Solution {
 // End solution here
 
 
-// My solution 
+
+
+// My solution - but is using global variable okay? 
 class Solution {
     boolean balanced=true;
     public boolean isBalanced(TreeNode root) {
@@ -112,6 +117,8 @@ class Solution {
         return 1+Math.max(left,right);
     }
 }
+
+
 
 
 
